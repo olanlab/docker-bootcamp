@@ -1,0 +1,42 @@
+// CREATE CONTAINERS ------------------------------------------------------------------------
+docker create <image name>
+// START CONTAINERS -------------------------------------------------------------------------
+docker start <container id>
+// WATCH OUTPUT THEN PUT IT TO TERMINAL
+docker start -a <container id>
+
+// RUN CONTAINERS ---------------------------------------------------------------------------
+// docker run = docker create + docker start
+docker run <image name>
+
+// OVERRIDING DEFAULT COMMANDS --------------------------------------------------------------
+docker run <image name> <command>
+// PORT MAPPING
+docker run -p <local port>:<container port> <image name>
+
+// LISTING RUNNING CONTAINERS ---------------------------------------------------------------
+docker ps
+docker ps --all
+
+// REMOVING STOPPED CONTAINERS --------------------------------------------------------------
+docker system prune
+
+// RETRIEVING LOG OUTPUTS -------------------------------------------------------------------
+docker logs <container id>
+
+// STOPPING CONTAINERS ----------------------------------------------------------------------
+docker stop <container id>
+docker kill <container id>
+
+// EXECUTING COMMANDS IN RUNNING CONTAINERS -------------------------------------------------
+docker exec -it <container id> <command>
+docker exec -it <container id> sh
+docker exec -it <container id> redis-cli
+
+
+// BUILD IMAGE FROM Dockerfile
+docker build . 
+
+// CREATE NEW IMAGE FROM CONTAINER'S CHANGES
+docker commit -c 'CMD ["redis-server"]' <container id>
+
