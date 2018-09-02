@@ -5,6 +5,9 @@ docker start <container id>
 // WATCH OUTPUT THEN PUT IT TO TERMINAL
 docker start -a <container id>
 
+// STOP CONTAINERS --------------------------------------------------------------------------
+docker stop <container id>
+
 // RUN CONTAINERS ---------------------------------------------------------------------------
 // docker run = docker create + docker start
 docker run <image name>
@@ -13,6 +16,13 @@ docker run <image name>
 docker run <image name> <command>
 // PORT MAPPING
 docker run -p <local port>:<container port> <image name>
+// RUNNING IN BACKGROUND
+docker run -d <image name>
+
+// VOLUMES
+docker run -p <local port>:<container port> -v $(pwd):/app <image name>
+// BOOKMARK VOLUMES
+docker run -p <local port>:<container port> -v /app/node_modules -v $(pwd):/app <image name>
 
 // LISTING RUNNING CONTAINERS ---------------------------------------------------------------
 docker ps
@@ -33,10 +43,9 @@ docker exec -it <container id> <command>
 docker exec -it <container id> sh
 docker exec -it <container id> redis-cli
 
-
 // BUILD IMAGE FROM Dockerfile
 docker build . 
+docker build -f <Dockerfile name> .
 
 // CREATE NEW IMAGE FROM CONTAINER'S CHANGES
 docker commit -c 'CMD ["redis-server"]' <container id>
-

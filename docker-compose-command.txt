@@ -1,0 +1,13 @@
+// LAUNCH IN BACKGROUND ------------------------------
+docker-compose up -d
+
+// REBUILD IMAGE
+docker-compose up --build ----------------------------
+
+// STOP CONTAINERS -----------------------------------
+docker-compose down
+
+
+// LISTING RUNNING CONTAINERS ------------------------
+docker-compose ps
+
