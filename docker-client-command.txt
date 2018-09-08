@@ -1,12 +1,32 @@
 // CREATE CONTAINERS ------------------------------------------------------------------------
 docker create <image name>
 // START CONTAINERS -------------------------------------------------------------------------
-docker start <container id>
+docker start <container>
 // WATCH OUTPUT THEN PUT IT TO TERMINAL
-docker start -a <container id>
+docker start -a <container>
 
-// STOP CONTAINERS --------------------------------------------------------------------------
-docker stop <container id>
+// STOPPING CONTAINERS ----------------------------------------------------------------------
+docker stop <container>
+docker kill <container>
+
+// LISTING IMAGES
+docker images
+
+// REMOVING UNUSED IMAGES --------------------------------------------------------------
+docker image prune
+docker image prune --all
+
+// BUILD IMAGE FROM Dockerfile
+docker build . 
+docker build -f <Dockerfile name> .
+
+// CREATE NEW IMAGE FROM CONTAINER'S CHANGES
+docker commit -c 'CMD ["redis-server"]' <container>
+
+// INSPECT IMAGE
+docker image inspect <image id>
+// INSPECT IMAGE FILTER
+docker image inspect -f <word> <image id>
 
 // RUN CONTAINERS ---------------------------------------------------------------------------
 // docker run = docker create + docker start
@@ -18,14 +38,15 @@ docker run <image name> <command>
 docker run -p <local port>:<container port> <image name>
 // RUNNING IN BACKGROUND
 docker run -d <image name>
+// ASSIGN CONTAINER NAME
+docker run --name <container name>
 
 // VOLUMES
 docker run -p <local port>:<container port> -v $(pwd):/app <image name>
 // BOOKMARK VOLUMES
 docker run -p <local port>:<container port> -v /app/node_modules -v $(pwd):/app <image name>
 
-// LISTING IMAGES
-docker images
+
 
 // LISTING RUNNING CONTAINERS ---------------------------------------------------------------
 docker ps
@@ -34,22 +55,20 @@ docker ps --all
 // REMOVING STOPPED CONTAINERS --------------------------------------------------------------
 docker system prune
 
-
 // RETRIEVING LOG OUTPUTS -------------------------------------------------------------------
-docker logs <container id>
+docker logs <container>
 
-// STOPPING CONTAINERS ----------------------------------------------------------------------
-docker stop <container id>
-docker kill <container id>
+// LIST PROCESSES RUNNING IN CONTAINER ------------------------------------------------------
+docker top <container>
+
+// DISPLAY A LIVE STREAM OF CONTAINER(S) RESOURCE USAGE STATISTICS --------------------------
+docker stats <container>
 
 // EXECUTING COMMANDS IN RUNNING CONTAINERS -------------------------------------------------
-docker exec -it <container id> <command>
-docker exec -it <container id> sh
-docker exec -it <container id> redis-cli
+docker exec -it <container> <command>
+docker exec -it <container> sh
+docker exec -it <container> redis-cli
 
-// BUILD IMAGE FROM Dockerfile
-docker build . 
-docker build -f <Dockerfile name> .
+// ATTACH LOCAL STANDARD INPUT, OUTPUT, ERROR STREAMS TO A RUNNING CONTAINER ----------------
+docker attach <container>
 
-// CREATE NEW IMAGE FROM CONTAINER'S CHANGES
-docker commit -c 'CMD ["redis-server"]' <container id>

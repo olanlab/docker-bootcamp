@@ -1,0 +1,8 @@
+// LOGIN
+docker login
+
+// PULL IMAGES FROM DOCKER HUB
+docker pull <image name>
+
+// PUSH IMAGES TO DOCKER HUB
+docker push <image name>

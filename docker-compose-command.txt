@@ -10,4 +10,3 @@ docker-compose down
 
 // LISTING RUNNING CONTAINERS ------------------------
 docker-compose ps
-
