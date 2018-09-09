@@ -1,12 +1,53 @@
+// LAUNCH --------------------------------------------
+docker-compose up
+
 // LAUNCH IN BACKGROUND ------------------------------
 docker-compose up -d
 
 // REBUILD IMAGE
-docker-compose up --build ----------------------------
+docker-compose up --build --------------------------------------------------------
 
-// STOP CONTAINERS -----------------------------------
+// STOP CONTAINERS ---------------------------------------------------------------
 docker-compose down
 
-
-// LISTING RUNNING CONTAINERS ------------------------
+// LISTING RUNNING CONTAINERS ----------------------------------------------------
 docker-compose ps
+
+// VALIDATE docker-compose.yml file ----------------------------------------------
+docker-compose config
+docker-compose config -q
+
+// PULL IMAGES in docker-compose.yml file ----------------------------------------
+docker-compose pull
+
+// BUILD IMAGES in docker-compose.yml file, no configure the container -----------
+docker-compose build
+
+// BUILD IMAGES in docker-compose.yml file ---------------------------------------
+docker-compose create
+
+// START, STOP, RESTART, PAUSE, UNPAUSE ------------------------------------------
+docker-compose start
+docker-compose stop
+docker-compose restart
+docker-compose pause
+docker-compose unpause
+
+// TOP, LOGS, EVENTS ------------------------------------------------------------
+docker-compose top
+docker-compose top <container>
+docker-compose logs
+docker-compose events
+
+// EXEC AND RUN -----------------------------------------------------------------
+docker-compose exec <container> <command>
+docker-compose exec worker ping -c 3 db
+
+// KILL, RM, DOWN ---------------------------------------------------------------
+docker-compose kill
+
+// REMOVES ANY CONTAINERS WITH THE STATE OF EXITED ------------------------------
+docker-compose rm
+
+// REMOVES ALL OF THE CONTAINERS, NETWORKS, VOLUMES, IMAGES ---------------------
+docker-compose down --rmi all --volumes

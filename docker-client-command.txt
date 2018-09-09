@@ -1,5 +1,5 @@
 // CREATE CONTAINERS ------------------------------------------------------------------------
-docker create <image name>
+docker create <image>
 // START CONTAINERS -------------------------------------------------------------------------
 docker start <container>
 // WATCH OUTPUT THEN PUT IT TO TERMINAL
@@ -24,27 +24,27 @@ docker build -f <Dockerfile name> .
 docker commit -c 'CMD ["redis-server"]' <container>
 
 // INSPECT IMAGE
-docker image inspect <image id>
+docker image inspect <image>
 // INSPECT IMAGE FILTER
-docker image inspect -f <word> <image id>
+docker image inspect -f <word> <image>
 
 // RUN CONTAINERS ---------------------------------------------------------------------------
 // docker run = docker create + docker start
-docker run <image name>
+docker run <image>
 
 // OVERRIDING DEFAULT COMMANDS --------------------------------------------------------------
-docker run <image name> <command>
+docker run <image> <command>
 // PORT MAPPING
-docker run -p <local port>:<container port> <image name>
+docker run -p <local port>:<container port> <image>
 // RUNNING IN BACKGROUND
-docker run -d <image name>
+docker run -d <image>
 // ASSIGN CONTAINER NAME
 docker run --name <container name>
 
 // VOLUMES
-docker run -p <local port>:<container port> -v $(pwd):/app <image name>
+docker run -p <local port>:<container port> -v $(pwd):/app <image>
 // BOOKMARK VOLUMES
-docker run -p <local port>:<container port> -v /app/node_modules -v $(pwd):/app <image name>
+docker run -p <local port>:<container port> -v /app/node_modules -v $(pwd):/app <image>
 
 
 

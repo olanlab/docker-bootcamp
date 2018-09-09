@@ -1,14 +1,14 @@
 // Connect a container to a network ----------------------------------------------
-docker network connect <network name> <container id>
+docker network connect <network> <container id>
 
 // Create a network --------------------------------------------------------------
-docker network create <network name>
+docker network create <network>
 
 // Disconnect a container from a network -----------------------------------------
-docker network disconnect <network name> <container id>
+docker network disconnect <network> <container id>
 
 // Display detailed information on one or more networks --------------------------
-docker network inspect <network name>
+docker network inspect <network>
 
 // List networks -----------------------------------------------------------------
 docker network ls
@@ -17,7 +17,7 @@ docker network ls
 docker network prune
 
 // Remove one or more networks ---------------------------------------------------
-docker network rm <network name>
+docker network rm <network>
 
 // EXAMPLE
 docker image pull redis:alpine
