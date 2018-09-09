@@ -46,14 +46,18 @@ docker run -p <local port>:<container port> -v $(pwd):/app <image>
 // BOOKMARK VOLUMES
 docker run -p <local port>:<container port> -v /app/node_modules -v $(pwd):/app <image>
 
-
-
 // LISTING RUNNING CONTAINERS ---------------------------------------------------------------
 docker ps
 docker ps --all
 
 // REMOVING STOPPED CONTAINERS --------------------------------------------------------------
 docker system prune
+// SHOW DOCKER DISK USAGE -------------------------------------------------------------------
+docker system df
+// GET REAL TIME EVENTS FROM THE SERVER -----------------------------------------------------
+docker system events
+// DISPLAY SYSTEM-WIDE INFORMATION ----------------------------------------------------------
+docker system info
 
 // RETRIEVING LOG OUTPUTS -------------------------------------------------------------------
 docker logs <container>
