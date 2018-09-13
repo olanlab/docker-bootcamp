@@ -11,6 +11,10 @@ docker kill <container>
 
 // LISTING IMAGES
 docker images
+dcoker image ls
+
+// REMOVE IMAGES
+docker image rm <image>
 
 // REMOVING UNUSED IMAGES --------------------------------------------------------------
 docker image prune

@@ -4,6 +4,8 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./db
+    volumes:
+      - db_data:/var/lib/mysql
     ports:
       - 33306:3306
   server:
@@ -15,4 +17,6 @@ services:
       - DATABASE_HOST=db
     ports:
       - 8080:8080
+volumes:
+  db_data:
     
