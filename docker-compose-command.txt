@@ -1,5 +1,6 @@
 // LAUNCH --------------------------------------------
 docker-compose up
+docker-compose -f <docker compose filename> up
 
 // LAUNCH IN BACKGROUND ------------------------------
 docker-compose up -d
