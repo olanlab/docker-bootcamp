@@ -11,7 +11,7 @@ docker kill <container>
 
 // LISTING IMAGES
 docker images
-dcoker image ls
+docker image ls
 
 // REMOVE IMAGES
 docker image rm <image>
@@ -23,6 +23,7 @@ docker image prune --all
 // BUILD IMAGE FROM Dockerfile
 docker build . 
 docker build -f <Dockerfile name> .
+docker build . -t <tag>
 
 // CREATE NEW IMAGE FROM CONTAINER'S CHANGES
 docker commit -c 'CMD ["redis-server"]' <container>
@@ -44,6 +45,8 @@ docker run -p <local port>:<container port> <image>
 docker run -d <image>
 // ASSIGN CONTAINER NAME
 docker run --name <container name>
+// RUNNING WITH INTERACTIVE
+docker run -it <container> <command>
 
 // VOLUMES
 docker run -p <local port>:<container port> -v $(pwd):/app <image>
@@ -80,3 +83,5 @@ docker exec -it <container> redis-cli
 // ATTACH LOCAL STANDARD INPUT, OUTPUT, ERROR STREAMS TO A RUNNING CONTAINER ----------------
 docker attach <container>
 
+// CHECKOUT LAYERS OF IMAGE
+docker history <image>

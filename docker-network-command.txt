@@ -1,11 +1,11 @@
 // Connect a container to a network ----------------------------------------------
-docker network connect <network> <container id>
+docker network connect <network> <container>
 
 // Create a network --------------------------------------------------------------
 docker network create <network>
 
 // Disconnect a container from a network -----------------------------------------
-docker network disconnect <network> <container id>
+docker network disconnect <network> <container>
 
 // Display detailed information on one or more networks --------------------------
 docker network inspect <network>

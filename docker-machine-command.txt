@@ -1,0 +1,41 @@
+// Use Machine to create the Droplet --------------------------------------------------
+// Digital Ocean
+docker-machine create --driver digitalocean --digitalocean-access-token <token> --digitalocean-region sgp1 <remote docker host>
+
+// AWS
+
+// Use Machine to remove the Droplet ---------------------------------------------------
+docker-machine rm <remote docker host>
+
+// Start and stop machines -------------------------------------------------------------
+docker-machine stop <remote docker host>
+docker-machine kill <remote docker host>
+docker-machine start <remote docker host>
+docker-machine restart <remote docker host>
+
+// Check Status onf remote docker host
+docker-machine status <remote docker host>
+
+// List available machines ------------------------------------------------------------
+docker-machine ls
+// See which machine is “active” 
+docker-machine active
+
+//  this renders information about a machine as JSON
+docker-machine inspect <remote docker host>
+
+//  Get the host IP address. ----------------------------------------------------------
+ docker-machine ip <remote docker host>
+
+// Upgrade a machine to the latest version of Docker.
+docker-machine upgrade <remote docker host>
+
+// Get the environment ----------------------------------------------------------------
+docker-machine env <remote docker host>
+// Connect your shell to the  machine. 
+eval "$(docker-machine env default)"
+
+// check whether DOCKER environment variables are set 
+env | grep DOCKER
+// Unset environment variables in the current shell
+docker-machine env -u

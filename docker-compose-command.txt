@@ -1,12 +1,16 @@
-// LAUNCH --------------------------------------------
+// LAUNCH | builds, creates, starts, attaches --------------------------------------------
 docker-compose up
+// LAUNCH | choose docker-compose.yml file 
 docker-compose -f <docker compose filename> up
 
-// LAUNCH IN BACKGROUND ------------------------------
+// LAUNCH | IN BACKGROUND 
 docker-compose up -d
 
-// REBUILD IMAGE
-docker-compose up --build --------------------------------------------------------
+// NO START CONTAINER 
+docker-compose up --no-start
+
+// LAUNCH | REBUILD IMAGE 
+docker-compose up --build 
 
 // STOP CONTAINERS ---------------------------------------------------------------
 docker-compose down

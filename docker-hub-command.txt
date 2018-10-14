@@ -6,3 +6,4 @@ docker pull <image>
 
 // PUSH IMAGES TO DOCKER HUB
 docker push <image>
+docker push <hub-user>/<repo-name>:<tag> 
