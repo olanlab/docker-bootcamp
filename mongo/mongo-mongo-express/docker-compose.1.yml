@@ -7,7 +7,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
     volumes:
-      - db_data:/data/db
+      - db_data:/data/db # Use Volume
   
   mongo-express:
     image: mongo-express

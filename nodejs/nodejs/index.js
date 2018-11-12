@@ -1,11 +1,15 @@
-const express = require("express");
+var express = require("express");
+var path = require("path");
+var app = express();
 
-const app = express();
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
 
-app.get("/", (req, res) => {
-    res.send("Hello Wolrd ...");
+app.get("/", (req, resp) => {
+	resp.render("index", { title: "Docker ", message: "This is node.js in Container!" });
 });
 
-app.listen(8080, () => {
-    console.log("Listening on port 8080");
+
+app.listen(3000, () => {
+	console.log("Server listening on port 3000");
 });

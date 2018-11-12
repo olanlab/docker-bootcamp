@@ -1,7 +1,9 @@
 {  "dependencies": {
-    "express": "*"
+    "express": "4.16.4",
+    "pug": "2.0.3",
+    "nodemon": "1.18.4"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   }
 }
