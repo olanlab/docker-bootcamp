@@ -25,10 +25,6 @@ docker build .
 docker build -f <Dockerfile name> .
 docker build . -t <tag>
 
-// CREATE NEW IMAGE FROM CONTAINER'S CHANGES
-docker commit -c 'CMD ["redis-server"]' <container>
-docker commit <container> <image>
-
 // INSPECT IMAGE
 docker image inspect <image>
 // INSPECT IMAGE FILTER
@@ -53,6 +49,18 @@ docker run -it <container> <command>
 docker run -p <local port>:<container port> -v $(pwd):/app <image>
 // BOOKMARK VOLUMES
 docker run -p <local port>:<container port> -v /app/node_modules -v $(pwd):/app <image>
+
+// CREATE NEW IMAGE FROM CONTAINER'S CHANGES
+docker commit -c 'CMD ["redis-server"]' <container>
+docker commit <container> <image>
+
+// SAVE / LOAD IMAGE
+docker save <image> > <file>
+docker load < <file>
+
+// EXPORT / IMPORT CONTAINER TO IMAGE
+docker export <container> > <file>
+docker import <file>
 
 // LISTING RUNNING CONTAINERS ---------------------------------------------------------------
 docker ps

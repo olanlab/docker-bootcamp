@@ -1,0 +1,2 @@
+$PHP_INI_DIR=/usr/local/etc/php
+$APACHE_CONFDIR=/etc/apache2
