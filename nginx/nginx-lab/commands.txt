@@ -1,0 +1,45 @@
+# DEFAULT 
+docker run -d --name my-nginx -p 8080:80  nginx
+
+# MAPPING | WEBSITE
+docker run -d -p 8081:80 --name my-nginx -v $(pwd)/demo:/usr/share/nginx/html nginx
+
+# MAPPING | nginx.conf
+docker run -d -p 8082:80 --name my-nginx -v $(pwd)/demo:/usr/share/nginx/html -v $(pwd)/conf/nginx.conf:/etc/nginx/nginx.conf nginx
+docker run -d -p 8082:80 --name my-nginx -v $(pwd)/web:/usr/share/nginx/html -v $(pwd)/conf/nginx.conf:/etc/nginx/nginx.conf nginx
+
+# STOP & REMOVE
+docker stop my-nginx && docker rm my-nginx
+
+# EXEC
+docker exec -it my-nginx bash
+------------------------------------------------------------------------------------------
+# NGINX 
+service nginx reload
+
+# INSTALL NANO, VIM
+apt-get update
+apt-get install nano vim
+
+------------------------------------------------------------------------------------------
+# PHP
+apt-get update
+apt-get install php-fpm
+# SERVICE
+service php7.0-fpm start
+service php7.0-fpm stop
+service php7.0-fpm restart
+service php7.0-fpm status
+
+# INSTALL php7.0-mysql
+apt-get install php7.0-mysql
+service php7.0-fpm restart
+
+# INSTALL curl
+apt-get install curl
+curl -I http://localhost/images/thumb.png
+curl -I  http://localhost/style.css
+curl -I -H "Accept-Encoding: gzip, deflate" http://localhost/style.css
+curl http://localhost/style.css
+curl -H "Accept-Encoding: gzip, deflate" http://localhost/style.css
+------------------------------------------------------------------------------------------

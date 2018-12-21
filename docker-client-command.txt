@@ -27,6 +27,7 @@ docker build . -t <tag>
 
 // CREATE NEW IMAGE FROM CONTAINER'S CHANGES
 docker commit -c 'CMD ["redis-server"]' <container>
+docker commit <container> <image>
 
 // INSPECT IMAGE
 docker image inspect <image>
