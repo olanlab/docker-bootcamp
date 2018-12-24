@@ -17,4 +17,6 @@ services:
     database:
         image: mysql:5.7
         environment:
-            MYSQL_ROOT_PASSWORD: 1111
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        # env_file:
+        #    - ./.env

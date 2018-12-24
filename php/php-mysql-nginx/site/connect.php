@@ -1,7 +1,7 @@
 <?php 
 $host = 'database';
 $user = 'root';
-$pass = '1111';
+$pass = '11112';
  
 $conn = mysqli_connect($host, $user, $pass);
 if (!$conn) {
