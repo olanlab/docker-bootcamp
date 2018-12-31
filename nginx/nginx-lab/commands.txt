@@ -8,6 +8,9 @@ docker run -d -p 8081:80 --name my-nginx -v $(pwd)/demo:/usr/share/nginx/html ng
 docker run -d -p 8082:80 --name my-nginx -v $(pwd)/demo:/usr/share/nginx/html -v $(pwd)/conf/nginx.conf:/etc/nginx/nginx.conf nginx
 docker run -d -p 8082:80 --name my-nginx -v $(pwd)/web:/usr/share/nginx/html -v $(pwd)/conf/nginx.conf:/etc/nginx/nginx.conf nginx
 
+# MAPPING | PHP
+docker run -d -p 8082:80 --name my-nginx -v $(pwd)/web:/usr/share/nginx/html -v $(pwd)/conf/nginx.conf:/etc/nginx/nginx.conf olanlab/nginx-phpfpm
+
 # MAPPING | https
 docker run -d -p 443:443 --name my-nginx -v $(pwd)/web:/usr/share/nginx/html -v $(pwd)/conf/nginx.conf:/etc/nginx/nginx.conf olanlab/nginx-phpfpm
 
@@ -59,3 +62,11 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/self.
 # Create dhparam.pem
 openssl dhparam 2048 -out /etc/nginx/ssl/dhparam.pem
 openssl dhparam -rand - 2048 > /etc/nginx/ssl/dhparam.pem
+
+# RUN PHP SERVER 
+php -S localhost:<port>
+php -S localhost:<port> <file>
+php -S localhost:9999 index.php
+
+# LOOP ON LINUX
+while sleep 0.5; do curl -I https://www.google.com; done
