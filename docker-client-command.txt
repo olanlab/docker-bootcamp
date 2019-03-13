@@ -77,6 +77,7 @@ docker system info
 
 // RETRIEVING LOG OUTPUTS -------------------------------------------------------------------
 docker logs <container>
+docker logs -f <container>
 
 // LIST PROCESSES RUNNING IN CONTAINER ------------------------------------------------------
 docker top <container>
