@@ -1,7 +1,7 @@
 // LAUNCH | builds, creates, starts, attaches --------------------------------------------
 docker-compose up
 // LAUNCH | choose docker-compose.yml file 
-docker-compose -f <docker compose filename> up
+docker-compose -f <filename> up
 
 // LAUNCH | IN BACKGROUND 
 docker-compose up -d
@@ -11,6 +11,14 @@ docker-compose up --no-start
 
 // LAUNCH | REBUILD IMAGE 
 docker-compose up --build 
+
+// SPECIFIC CONTAINER
+docker-compose up <service name>
+docker-compose up -d --build <service name>
+docker-compose -f <file name> up -d --build
+docker-compose start <service name>
+docker-compose stop <service name>
+docker-compose logs <service name>
 
 // STOP CONTAINERS ---------------------------------------------------------------
 docker-compose down
@@ -40,12 +48,12 @@ docker-compose unpause
 
 // TOP, LOGS, EVENTS ------------------------------------------------------------
 docker-compose top
-docker-compose top <container>
+docker-compose top <service name>
 docker-compose logs
 docker-compose events
 
 // EXEC AND RUN -----------------------------------------------------------------
-docker-compose exec <container> <command>
+docker-compose exec <service name> <command>
 docker-compose exec worker ping -c 3 db
 
 // KILL, RM, DOWN ---------------------------------------------------------------
