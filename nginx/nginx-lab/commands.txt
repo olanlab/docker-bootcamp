@@ -28,20 +28,20 @@ apt-get update
 apt-get install nano vim
 
 ------------------------------------------------------------------------------------------
-# PHP
+# INSTALL | PHP-FPM
 apt-get update
 apt-get install php-fpm
-# SERVICE
+# SERVICE | PHP-FPM
 service php7.0-fpm start
 service php7.0-fpm stop
 service php7.0-fpm restart
 service php7.0-fpm status
 
-# INSTALL php7.0-mysql
+# INSTALL | php7.0-mysql
 apt-get install php7.0-mysql
 service php7.0-fpm restart
 
-# INSTALL curl
+# INSTALL | curl
 apt-get install curl
 curl -I http://localhost/images/thumb.png
 curl -I  http://localhost/style.css
@@ -49,17 +49,17 @@ curl -I -H "Accept-Encoding: gzip, deflate" http://localhost/style.css
 curl http://localhost/style.css
 curl -H "Accept-Encoding: gzip, deflate" http://localhost/style.css
 ------------------------------------------------------------------------------------------
-# INSTALL apache2-utils
+# INSTALL | apache2-utils
 apt-get install apache2-utils
 
-# CREATE .htpasswd
+# CREATE | .htpasswd
 htpasswd -c /etc/nginx/.htpasswd <username>
 
 ------------------------------------------------------------------------------------------
-# Create the SSL Certificate
+# CREATE | the SSL Certificate
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/ssl/self.key -out /etc/nginx/ssl/self.crt
 
-# Create dhparam.pem
+# CREATE | dhparam.pem
 openssl dhparam 2048 -out /etc/nginx/ssl/dhparam.pem
 openssl dhparam -rand - 2048 > /etc/nginx/ssl/dhparam.pem
 
