@@ -95,3 +95,6 @@ docker attach <container>
 
 // CHECKOUT LAYERS OF IMAGE
 docker history <image>
+
+// COPY FILE TO CONTAINER
+docker cp <file> <container>:/<file>
