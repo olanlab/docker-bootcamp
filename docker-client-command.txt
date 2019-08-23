@@ -45,6 +45,9 @@ docker run --name <container name>
 // RUNNING WITH INTERACTIVE
 docker run -it <container> <command>
 
+// RENAME CONTAINER NAME
+docker rename <name> <new name>
+
 // VOLUMES
 docker run -p <local port>:<container port> -v $(pwd):/app <image>
 // BOOKMARK VOLUMES
@@ -98,3 +101,15 @@ docker history <image>
 
 // COPY FILE TO CONTAINER
 docker cp <file> <container>:/<file>
+
+// List all containers (only IDs)
+docker ps -aq
+
+// Stop all running containers
+docker stop $(docker ps -aq)
+
+// Remove all containers
+docker rm $(docker ps -aq)
+
+// Remove all images
+docker rmi $(docker images -q)
