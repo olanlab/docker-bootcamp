@@ -49,7 +49,7 @@ docker-compose unpause
 // TOP, LOGS, EVENTS ------------------------------------------------------------
 docker-compose top
 docker-compose top <service name>
-docker-compose logs
+docker-compose logs -f 
 docker-compose events
 
 // EXEC AND RUN -----------------------------------------------------------------
