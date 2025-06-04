@@ -102,6 +102,17 @@ docker history <image>
 // COPY FILE TO CONTAINER
 docker cp <file> <container>:/<file>
 
+// COPY FILE FROM CONTAINER
+docker cp <container>:/<file> <destination>
+
+// COPY DIRECTORY TO CONTAINER
+docker cp <directory> <container>:/<directory>
+
+// COPY DIRECTORY FROM CONTAINER
+docker cp <container>:/<directory> <destination>
+
+
+
 // List all containers (only IDs)
 docker ps -aq
 

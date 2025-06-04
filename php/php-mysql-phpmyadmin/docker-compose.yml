@@ -1,0 +1,27 @@
+services:
+  db:
+     image: mysql:8.0
+     networks:
+      - php_network
+     volumes:
+       - db_data:/var/lib/mysql
+       - ./db/:/docker-entrypoint-initdb.d
+     restart: always
+     environment:
+      MYSQL_ROOT_PASSWORD: 1111
+
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin
+    networks:
+      - php_network
+    restart: always
+    ports:
+      - 8888:80
+  
+volumes:
+    db_data:
+
+networks: 
+  php_network:
