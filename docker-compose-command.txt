@@ -64,3 +64,4 @@ docker-compose rm
 
 // REMOVES ALL OF THE CONTAINERS, NETWORKS, VOLUMES, IMAGES ---------------------
 docker-compose down --rmi all --volumes
+
