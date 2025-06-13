@@ -2,11 +2,9 @@ FROM node:alpine
 
 WORKDIR /usr/app
 
-# Install dependencies
+# Install some dependencies
 COPY ./package.json ./
-RUN npm install --only=production
-
-# Copy application files
+RUN npm install
 COPY ./ ./
 
 # Default command
